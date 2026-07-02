@@ -68,12 +68,17 @@ jobs:
         with:
           name: AgnesAIStudio-Portable
           path: artifacts
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download Installer
         uses: actions/download-artifact@v4
         with:
           name: AgnesAIStudio-Installer
           path: artifacts
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List artifacts
+        run: ls -la artifacts/
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -83,3 +88,5 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
