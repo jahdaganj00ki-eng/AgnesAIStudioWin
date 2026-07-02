@@ -1,0 +1,85 @@
+#tab-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.image-panel {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 0;
+  height: calc(100% - 57px);
+}
+
+.image-controls {
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.image-controls select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+}
+
+.image-controls select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.image-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.image-placeholder,
+.image-loading,
+.image-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.image-placeholder span,
+.image-loading span,
+.image-error span {
+  font-size: 48px;
+}
+
+.image-output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 100%;
+}
+
+.image-output img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.image-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.image-error p {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.1);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}

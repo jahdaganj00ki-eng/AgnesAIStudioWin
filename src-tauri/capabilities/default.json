@@ -1,0 +1,9 @@
+{
+  "identifier": "default",
+  "description": "Agnes AI Studio capabilities",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "store:default"
+  ]
+}

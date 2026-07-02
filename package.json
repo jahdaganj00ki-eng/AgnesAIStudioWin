@@ -1,0 +1,17 @@
+{
+  "name": "agnes-ai-studio",
+  "version": "1.0.0",
+  "description": "Agnes AI Studio - Native Windows App für Agnes AI Modelle",
+  "private": true,
+  "scripts": {
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2"
+  }
+}
