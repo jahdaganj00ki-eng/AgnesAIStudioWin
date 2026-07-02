@@ -59,26 +59,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download Portable EXE
+      - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          name: AgnesAIStudio-Portable
           path: artifacts
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download Installer
-        uses: actions/download-artifact@v4
-        with:
-          name: AgnesAIStudio-Installer
-          path: artifacts
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List artifacts
-        run: ls -la artifacts/
+        run: find artifacts/ -type f
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
